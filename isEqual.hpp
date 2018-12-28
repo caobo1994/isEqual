@@ -49,6 +49,7 @@ LISTEQUAL(std::multiset)
 template <class T>
 bool isEqual(const std::unordered_set<T>& op1, const std::unordered_set<T>& op2)
 {
+  CHECKSIZE(op1, op2)
   std::set<T> op1_temp;
   std::set<T> op2_temp;
   op1_temp.insert(op1.begin(), op1.end());
@@ -61,6 +62,7 @@ bool isEqual(
   const std::unordered_multiset<T>& op1,
   const std::unordered_multiset<T>& op2)
 {
+  CHECKSIZE(op1, op2)
   std::multiset<T> op1_temp;
   std::multiset<T> op2_temp;
   op1_temp.insert(op1.begin(), op1.end());
