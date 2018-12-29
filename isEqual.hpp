@@ -24,6 +24,20 @@ if (op1.size() != op2.size()) \
 template <class T>
 bool isEqual(const T& op1, const T& op2);
 
+template <class T>
+bool isEqual(const T& op1, const T& op2)
+{
+  return (op1 == op2);
+}
+
+template <class T>
+bool isEqualReal(const T& op1, const T& op2)
+{
+  constexpr T err = 1e-6;
+  T diff = abs(op1 - op2);
+  return (diff < err);
+}
+
 template <class T, template<class> class LIST>
 bool isEqualList(const LIST<T>& op1, const LIST<T>& op2)
 {
